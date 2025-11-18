@@ -1,0 +1,6 @@
+09:00 iface Gig0/1: Link Down detected
+09:00 bgp: Neighbor 10.0.0.2 went Idle
+09:01 iface Gig0/2: Link is Up
+09:02 bgp: Neighbor 10.0.0.3 went Idle
+09:03 iface Gig0/1: Link is Up
+
