@@ -1,0 +1,6 @@
+- name: Test Vault Secret Retrieval in AWX
+  hosts: localhost
+  tasks:
+    - name: Fetch secret
+      debug:
+        msg: "{{ lookup('hashi_vault', 'secret=secret/data/ansible-ssh key=password token=myroottoken url=http://127.0.0.1:8200') }}"
