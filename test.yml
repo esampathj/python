@@ -1,6 +1,8 @@
-- name: Test Vault Secret Retrieval in AWX
+---
+- name: Test Vault Secret Access for sam
   hosts: localhost
+  gather_facts: false
   tasks:
-    - name: Fetch secret
-      debug:
-        msg: "{{ lookup('hashi_vault', 'secret=secret/data/ansible-ssh key=password token=myroottoken url=http://127.0.0.1:8200') }}"
+    - name: Print the value for sam from Vault
+      ansible.builtin.debug:
+        msg: "{{ lookup('community.hashi_vault', 'secret=kv/data/ansible token=hvs.B9BpUmHDLk4bDVIiS2esdbYK url=http://vault.awx.svc.cluster.local:8200 engine_mount_point=kv').sam }}"
